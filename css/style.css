@@ -1,0 +1,289 @@
+@charset "utf-8";
+/* CSS Document */
+
+@-webkit-keyframes blink {
+  0%   { opacity: 0; transform: scale(1); }
+  100% { opacity: 1; transform:scale(1.5); }
+}
+@-moz-keyframes blink {
+  0%   { opacity: 0; transform: scale(1); }
+  100% { opacity: 1; transform:scale(1.5); }
+}
+@-o-keyframes blink {
+  0%   { opacity: 0; transform: scale(1); }
+  100% { opacity: 1; transform: scale(1.5); }
+}
+@keyframes blink {
+  0%   { opacity: 0; transform: scale(1); }
+  100% { opacity: 1; transform: scale(1.5); }
+}
+@keyframes move {
+   from { margin-top: 50px; }
+  50%  { margin-top: 150px !important; } /* ignored */
+  to   { margin-top: 100px; }
+}  
+@keyframes rotate {
+   from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}  
+@keyframes rockt {
+   0% { left:0; top:0;  }
+  25% { left:100%; top:0;  transform: rotate(90deg); }
+  50% { transform: rotate(180deg); left:100%; top:100%; }
+  75% { transform: rotate(270deg); left:0; top:100%; }
+  100% { transform: rotate(360deg); left:0; top:0; }
+}  
+
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-box-shadow: 0 0 0 0 rgba(234,81,0, 0.2);
+  }
+  70% {
+      -webkit-box-shadow: 0 0 0 200px rgba(234,81,0, 0.2);
+  }
+  100% {
+      -webkit-box-shadow: 0 0 0 0 rgba(234,81,0, 0);
+  }
+}
+@keyframes pulse {
+  0% {
+    -moz-box-shadow: 0 0 0 0 rgba(234,81,0, 0.2);
+    box-shadow: 0 0 0 0 rgba(234,81,0, 0.2);
+  }
+  70% {
+      -moz-box-shadow: 0 0 0 10px rgba(204,169,44, 0);
+      box-shadow: 0 0 0 200px rgba(204,169,44, 0);
+  }
+  100% {
+      -moz-box-shadow: 0 0 0 0 rgba(234,81,0, 0);
+      box-shadow: 0 0 0 0 rgba(234,81,0, 0);
+  }
+}
+@keyframes rocks {
+   from { top:440px; left:0; }
+  to   { top:0; left:100%;; }
+}  
+    
+
+
+#box {
+  -webkit-animation: blink 4s infinite; /* Safari 4+ */
+  -moz-animation:    blink 2s infinite; /* Fx 5+ */
+  -o-animation:      blink 2s infinite; /* Opera 12+ */
+  animation:         blink 2s infinite; /* IE 10+, Fx 29+ */
+  animation-timing-function: ease-out; /* or: ease, ease-in, ease-in-out, linear, cubic-bezier(x1, y1, x2, y2) */
+  background:#fff;
+  width:100px;
+  height:100px;
+  margin:50px auto;
+}
+#box1 {
+  animation-name: move;
+ animation-duration: 2s; /* or: Xms */
+ animation-iteration-count: 10;
+ animation-direction: alternate; /* or: normal */
+ animation-timing-function: ease-out; /* or: ease, ease-in, ease-in-out, linear, cubic-bezier(x1, y1, x2, y2) */
+ animation-fill-mode: forwards; /* or: backwards, both, none */
+ animation-delay: .3s; /* or: Xms */
+  background:#fff;
+  width:100px;
+  height:100px;
+  margin:50px auto;
+}
+body {
+	height:100%;
+	width:99%;
+	background:#051d40 url(../images/11.jpg) repeat;
+	overflow:hidden;
+	position:relative;
+}
+.all_stars {
+width:100%;
+height:100%;
+position:absolute;
+z-index:1;
+
+}
+.blink {
+	width:16px;
+	-webkit-animation: blink 2s infinite; /* Safari 4+ */
+    -moz-animation:    blink 2s infinite; /* Fx 5+ */
+    -o-animation:      blink 2s infinite; /* Opera 12+ */
+    animation:         blink 2s infinite; /* IE 10+, Fx 29+ */
+	animation-timing-function: ease-out; /* or: ease, ease-in, ease-in-out, linear, cubic-bezier(x1, y1, x2, y2) */
+	 animation-direction: alternate;
+}
+.system {
+  height: 100%;
+  position: absolute;
+  width: 60%;
+  z-index: 2;
+  top:30px;
+}
+.main_planet span {
+  border-radius: 100%;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  width:auto;
+}
+.main_planet img {
+  width: 70px;
+  -webkit-animation: pulse 3.0s linear infinite;
+    animation: pulse 3.0s linear infinite;
+	border-radius:100%;
+	animation-delay:3s;
+	
+}
+.main_planet {
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 245px;
+  
+}
+.first_planet {
+  border: 1px solid #25285a;
+  border-radius: 100%;
+  height: 100px;
+  left: 0;
+  margin: 0 auto;
+  position: absolute;
+  right: 0;
+  top: 230px;
+  width:100px;
+  animation-name: rotate;
+ animation-duration: 5s; /* or: Xms */
+ animation-iteration-count: infinite;
+ animation-timing-function: ease-out; /* or: ease, ease-in, ease-in-out, linear, cubic-bezier(x1, y1, x2, y2) */
+ animation-fill-mode: forwards; /* or: backwards, both, none */
+ animation-timing-function: linear;
+}
+.first_planet img {
+  width: 24px;
+}
+.first_planet > span {
+	position: absolute;
+	top: 7px;
+	animation-name: rotate;
+	animation-iteration-count: infinite;
+	animation-duration: 12s;
+	animation-timing-function: linear;
+}
+
+.second {
+  animation-duration: 9s;
+  height: 160px;
+  top: 200px;
+  width: 160px;
+}
+.second span {
+	top:27px;
+}
+.third {
+  animation-duration: 12s;
+  height: 220px;
+  top: 170px;
+  width: 220px;
+}
+.third span {
+	top:50px;
+}
+.fourth {
+  animation-duration: 16s;
+  height: 280px;
+  top: 140px;
+  width: 280px;
+}
+.fourth span {
+	top:70px;
+}
+
+.fifth {
+  animation-duration: 20s;
+  height: 340px;
+  top: 110px;
+  width: 340px;
+}
+.fifth span {
+	top:90px;
+}
+
+.sixth {
+  animation-duration: 25s;
+  height: 400px;
+  top: 80px;
+  width: 400px;
+}
+.sixth span {
+	top:120px;
+}
+.seventh {
+  animation-duration: 40s;
+  height: 460px;
+  top: 50px;
+  width: 460px;
+}
+.seventh span {
+	top:140px;
+}
+.eighth {
+  animation-duration: 55s;
+  height: 520px;
+  top: 20px;
+  width: 520px;
+}
+.eighth span {
+	top:170px;
+}
+
+.rocket > img {
+  width: 150px;
+   animation-name: rockt;
+ animation-duration:10s; /* or: Xms */
+ animation-iteration-count: infinite;
+ animation-timing-function: ease-out; /* or: ease, ease-in, ease-in-out, linear, cubic-bezier(x1, y1, x2, y2) */
+ animation-timing-function: linear;
+ transform: rotate(90deg);
+ position:absolute;
+ left:0;
+ top:0;
+}
+
+.rocks {
+  left: 0;
+  position: absolute;
+  top: 440px;
+	 animation-name: rocks;
+	 animation-duration: 10s; /* or: Xms */
+	 animation-iteration-count: infinite;
+	 animation-direction: alternate; /* or: normal */
+	 animation-timing-function: ease-out; /* or: ease, ease-in, ease-in-out, linear, cubic-bezier(x1, y1, x2, y2) */
+	 animation-delay: .3s; /* or: Xms */
+	 animation-timing-function: linear;
+}
+.fullscreen-bg {
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: -100;
+}
+.fullscreen-bg__video {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.fullscreen-bg__video {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+
